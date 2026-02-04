@@ -1,0 +1,101 @@
+.learningControls {
+    background: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    border: 1px solid var(--primary-color);
+    animation: slideUp 0.3s ease-out;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.closeBtn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+.controlGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 0.8rem;
+}
+
+.card h4 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.card p {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-bottom: 1rem;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.actionBtn {
+    background: var(--primary-color);
+    color: #000;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 0.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.actionBtn.active {
+    background: var(--accent-color);
+}
+
+.select {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    outline: none;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .controlGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .controlGrid {
+        grid-template-columns: 1fr;
+    }
+}

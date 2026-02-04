@@ -1,0 +1,77 @@
+.trainerOverlay {
+    background: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.statItem span {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    text-transform: uppercase;
+}
+
+.feedback {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.success {
+    background: rgba(74, 222, 128, 0.2);
+    color: var(--success-color);
+}
+
+.error {
+    background: rgba(248, 113, 113, 0.2);
+    color: var(--error-color);
+}
+
+.instructions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.resetBtn {
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.resetBtn:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

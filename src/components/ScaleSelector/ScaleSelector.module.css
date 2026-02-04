@@ -1,0 +1,95 @@
+.selectorContainer {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.group label {
+    font-size: 0.875rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.group select {
+    background: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    min-width: 150px;
+    cursor: pointer;
+    outline: none;
+}
+
+.group select:focus {
+    border-color: var(--primary-color);
+}
+
+.trainerButton {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.trainerButton:hover {
+    background: rgba(56, 189, 248, 0.1);
+}
+
+.trainerButton.active {
+    background: var(--accent-color);
+    color: #000;
+    border-color: var(--accent-color);
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    user-select: none;
+    color: var(--text-color);
+    padding-bottom: 0.5rem;
+}
+
+.buttonRow {
+    display: flex;
+    gap: 1rem;
+}
+
+.learningButton {
+    background: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.learningButton:hover {
+    background: rgba(244, 114, 182, 0.1);
+}
+
+.learningButton.active {
+    background: var(--accent-color);
+    color: #000;
+}
