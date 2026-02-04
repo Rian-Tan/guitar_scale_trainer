@@ -32,12 +32,30 @@ export const getFretboardNotes = (tuning: number[], fretCount: number): Fretboar
     return notes;
 };
 
-export const CAGED_POSITIONS = {
-    major: [
-        { start: 0, end: 4 }, // C shape
-        { start: 2, end: 6 }, // A shape
-        { start: 5, end: 9 }, // G shape
-        { start: 7, end: 11 }, // E shape
-        { start: 10, end: 14 }, // D shape
-    ],
+// CAGED-style positions calculated relative to the root note on the 6th string
+// Each position typically covers a 4-5 fret span.
+export const getPositionBounds = (rootNoteIndex: number, positionIndex: number): { start: number, end: number } => {
+    // 1. Find the first occurrence of rootNoteIndex on the 6th string
+    // Tuning[5] is Low E (index 4)
+    let rootFret = (rootNoteIndex - 4 + 12) % 12;
+
+    // The 5 positions are roughly:
+    // Pos 1: Root on 6th string (Pointer/Middle finger)
+    // Pos 2: Root on 6th string (Pinky finger) - starts higher
+    // Actually let's use a simpler mapping for now that matches the common "5 shapes"
+
+    const offsets = [
+        { start: -1, end: 3 },  // Pos 1 (Shape 4 in some systems) - Root is near the start
+        { start: 2, end: 6 },   // Pos 2
+        { start: 4, end: 8 },   // Pos 3
+        { start: 7, end: 11 },  // Pos 4
+        { start: 9, end: 13 },  // Pos 5
+    ];
+
+    const offset = offsets[positionIndex % 5];
+
+    return {
+        start: Math.max(0, rootFret + offset.start),
+        end: rootFret + offset.end
+    };
 };

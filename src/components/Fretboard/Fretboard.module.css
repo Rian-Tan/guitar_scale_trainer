@@ -17,6 +17,18 @@
     border-bottom: 4px solid #333;
 }
 
+.positionBg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: rgba(var(--accent-rgb), 0.1);
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+}
+
 .string {
     position: absolute;
     left: 0;
@@ -35,6 +47,16 @@
     width: 3px;
     background: linear-gradient(to right, #94a3b8, #64748b, #94a3b8);
     box-shadow: 1px 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.nut {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    background: #fdfdfd;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 5;
 }
 
 .marker {
@@ -74,6 +96,14 @@
     z-index: 10;
 }
 
+.openNote {
+    width: 32px;
+    height: 32px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background-color: transparent !important;
+    color: white !important;
+}
+
 .note:hover {
     transform: translate(-50%, -50%) scale(1.1);
 }
@@ -91,6 +121,12 @@
 
 .noteLabel {
     user-select: none;
+}
+
+.note.pitchHover {
+    box-shadow: 0 0 20px #4d7c0f !important;
+    transform: translate(-50%, -50%) scale(1.1);
+    z-index: 15;
 }
 
 .clickableArea {
@@ -126,12 +162,10 @@
 }
 
 .sideDot {
-    position: absolute;
     width: 6px;
     height: 6px;
     background: rgba(255, 255, 255, 0.4);
     border-radius: 50%;
-    transform: translateX(-50%);
 }
 
 .startNote {
